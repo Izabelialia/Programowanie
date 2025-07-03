@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class ProjectileSkill : MonoBehaviour
@@ -17,7 +18,8 @@ public class ProjectileSkill : MonoBehaviour
     public float throwUpwardForce;
 
     bool readyToThrow;
-
+    public Inventory inventory;
+    
     private void Start()
     {
         readyToThrow = true;
@@ -25,6 +27,7 @@ public class ProjectileSkill : MonoBehaviour
 
     private void Update()
     {
+        totalThrows = inventory.bombs;
         if(Input.GetKeyDown(throwKey) && readyToThrow && totalThrows > 0)
         {
             Throw();
@@ -52,7 +55,7 @@ public class ProjectileSkill : MonoBehaviour
 
         projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
 
-        totalThrows--;
+        inventory.bombs--;
         
         Invoke(nameof(ResetThrow), throwCooldown);
     }

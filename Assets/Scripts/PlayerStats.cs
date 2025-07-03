@@ -10,10 +10,22 @@ public class PlayerStats : MonoBehaviour
     public int armour = 10;
     public int damage = 25;
     public float atackSpeed = 1;
+    
+    [Header("Leczenie")]
+    public int healAmount = 25;
+    public Inventory inventory;
 
     void Start()
     {
         currentHp = maxHp;
+    }
+    
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            HealWithMushroom();
+        }
     }
 
     public void TakeDamage(Enemy enemy)
@@ -31,6 +43,24 @@ public class PlayerStats : MonoBehaviour
         if (currentHp <= 0)
         {
             Die();
+        }
+    }
+    
+    public void HealWithMushroom()
+    {
+        if (inventory != null && inventory.mushrooms > 0 && currentHp < maxHp)
+        {
+            inventory.mushrooms--;
+            currentHp += healAmount;
+
+            if (currentHp > maxHp)
+                currentHp = maxHp;
+
+            Debug.Log("Gracz uleczony o " + healAmount + " HP.");
+        }
+        else
+        {
+            Debug.Log("Brak grzybków lub pełne zdrowie.");
         }
     }
 
