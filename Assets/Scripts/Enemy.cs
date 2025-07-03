@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        health -= damage - armour;
 
         if (health <= 0)
             DestroyEnemy();
