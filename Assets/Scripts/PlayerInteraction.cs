@@ -19,12 +19,12 @@ public class PlayerInteraction : MonoBehaviour
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         if (Physics.Raycast(ray, out hit, playerReach))
         {
-            if (hit.collider.tag == "Interactable")
+            if (hit.collider.CompareTag("Interactable"))
             {
-                Interactable newinteractable = hit.collider.GetComponent<Interactable>();
-                if (newinteractable.enabled)
+                Interactable newInteractable = hit.collider.GetComponent<Interactable>();
+                if (newInteractable.enabled)
                 {
-                    SetNewInteractable(newinteractable);
+                    SetNewInteractable(newInteractable);
                 }
                 else
                 {
@@ -42,13 +42,15 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    void SetNewInteractable(Interactable newinteractable)
+    void SetNewInteractable(Interactable newInteractable)
     {
-        currentInteractable = newinteractable;
+        currentInteractable = newInteractable;
+        HudController.Instance.EnableInteractionText(currentInteractable.message);
     }
 
     void DisableCurrentInteractable()
     {
+        HudController.Instance.DisableInteractionText(null);
         if (currentInteractable)
         {
             currentInteractable = null;
