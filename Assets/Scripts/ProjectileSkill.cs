@@ -23,6 +23,7 @@ public class ProjectileSkill : MonoBehaviour
     private void Start()
     {
         readyToThrow = true;
+        HudController.Instance.UpdateInventoryUI(inventory);
     }
 
     private void Update()
@@ -56,6 +57,8 @@ public class ProjectileSkill : MonoBehaviour
         projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
 
         inventory.bombs--;
+        
+        HudController.Instance.UpdateInventoryUI(inventory);
         
         Invoke(nameof(ResetThrow), throwCooldown);
     }

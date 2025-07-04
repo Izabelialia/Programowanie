@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         currentHp = maxHp;
+        HudController.Instance.UpdateInventoryUI(inventory);
     }
     
     void Update()
@@ -54,6 +55,8 @@ public class PlayerStats : MonoBehaviour
 
             if (currentHp > maxHp)
                 currentHp = maxHp;
+            
+            HudController.Instance.UpdateInventoryUI(inventory);
 
             Debug.Log("Gracz uleczony o " + healAmount + " HP.");
         }
