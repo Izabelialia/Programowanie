@@ -30799,6 +30799,8 @@ MonoBehaviour:
   interactionText: {fileID: 1631518847}
   bombCountText: {fileID: 663123341}
   mushroomCountText: {fileID: 1924869085}
+  coinCountText: {fileID: 483588446}
+  keyCountText: {fileID: 792639296}
 --- !u!1001 &1122437781
 PrefabInstance:
   m_ObjectHideFlags: 0

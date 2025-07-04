@@ -14,6 +14,8 @@ public class HudController : MonoBehaviour
     [Header("Equipment UI")]
     [SerializeField] TMP_Text bombCountText;
     [SerializeField] TMP_Text mushroomCountText;
+    [SerializeField] TMP_Text coinCountText;
+    [SerializeField] TMP_Text keyCountText;
 
     public void EnableInteractionText(string text)
     {
@@ -30,5 +32,7 @@ public class HudController : MonoBehaviour
     {
         bombCountText.text = ": " + inventory.bombs;
         mushroomCountText.text = ": " + inventory.mushrooms;
+        coinCountText.text = ": " + inventory.coins;
+        keyCountText.text = ": " + inventory.keys;
     }
 }
