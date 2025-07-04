@@ -10837,7 +10837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   armour: 10
-  enemyDamage: 10
+  enemyDamage: 30
   damageCooldown: 1
 --- !u!65 &397608220
 BoxCollider:
@@ -42411,7 +42411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb4d39ffcbac93439d5487302de27b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 1968669503}
+  playerStats: {fileID: 1968669510}
+  playerClasses: {fileID: 1968669507}
   healthBar: {fileID: 469520969}
 --- !u!4 &1500145593
 Transform:
@@ -56734,8 +56735,8 @@ GameObject:
   - component: {fileID: 1968669499}
   - component: {fileID: 1968669500}
   - component: {fileID: 1968669501}
+  - component: {fileID: 1968669510}
   - component: {fileID: 1968669502}
-  - component: {fileID: 1968669503}
   - component: {fileID: 1968669504}
   - component: {fileID: 1968669505}
   - component: {fileID: 1968669506}
@@ -56894,6 +56895,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1812613533}
+  playerClasses: {fileID: 1968669507}
 --- !u!114 &1968669501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56927,24 +56929,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a17da435bd995499fdb751f6d13c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1968669503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968669494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3f2ab104a256ea4ab35c490605243c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 100
-  currentHp: 0
-  armour: 0
-  damage: 25
-  healAmount: 25
-  inventory: {fileID: 1968669505}
 --- !u!114 &1968669504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56989,7 +56973,7 @@ MonoBehaviour:
   attackDelay: 0.5
   attackRange: 5
   chargeTime: 1
-  playerStats: {fileID: 1968669503}
+  playerClasses: {fileID: 1968669507}
 --- !u!114 &1968669507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57020,6 +57004,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143bcc723f10a0e40888d2e0e9389a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
+  experienceToNextLevel: 100
+  playerClasses: {fileID: 1968669507}
 --- !u!114 &1968669509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57032,6 +57019,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c67a5b37cb6f6c444a8d94694d4a5141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1968669510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968669494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f2ab104a256ea4ab35c490605243c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHp: 0
+  healAmount: 25
+  inventory: {fileID: 1968669505}
 --- !u!1001 &1969560766
 PrefabInstance:
   m_ObjectHideFlags: 0

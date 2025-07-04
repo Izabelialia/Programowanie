@@ -41,21 +41,21 @@ public class PlayerClasses : MonoBehaviour
                 maxHp = 150 + (level * 50);
                 attack = 25 + (level * 5);
                 defense = 20 + (level * 3);
-                speed = 3.5f;
+                speed = 5f;
                 break;
 
             case CharacterClass.Archer:
                 maxHp = 100 + (level * 30);
                 attack = 35 + (level * 7);
                 defense = 10 + (level * 2);
-                speed = 5f;
+                speed = 15f;
                 break;
 
             case CharacterClass.Mage:
                 maxHp = 80 + (level * 10);
                 attack = 45 + (level * 10);
                 defense = 5 + (level * 1);
-                speed = 4f;
+                speed = 10f;
                 break;
         }
     }

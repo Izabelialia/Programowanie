@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
     
     Rigidbody rb;
+    
+    public PlayerClasses playerClasses;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -45,6 +47,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (playerClasses != null)
+            movementSpeed = playerClasses.speed;
+        
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight + 0.2f, whatIsGround);
         MyInput();
         SpeedControl();

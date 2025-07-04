@@ -9,7 +9,7 @@ public class PlayerAttack : MonoBehaviour
     private float buttonHoldTime = 0f;
     private bool isHolding = false;
     
-    public PlayerStats playerStats;
+    public PlayerClasses playerClasses;
 
     void Update()
     {
@@ -35,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
     {
         canAttack = false;
 
-        int finalDamage = playerStats.damage;
+        int finalDamage = playerClasses.attack;
 
         if (buttonHoldTime >= chargeTime)
         {
