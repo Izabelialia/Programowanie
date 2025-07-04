@@ -1,25 +1,28 @@
 using UnityEngine;
 
-public class LevelSystem
+public class LevelSystem : MonoBehaviour
 {
-    private int level;
-    private int experience;
-    private int experienceToNextLevel;
+    public int level = 0;
+    private int experience = 0;
+    public int experienceToNextLevel = 100;
 
-    public LevelSystem()
+    public PlayerClasses playerClasses;
+
+    private void Start()
     {
-        level = 0;
-        experience = 0;
-        experienceToNextLevel = 100;
+        if (playerClasses == null)
+            playerClasses = GetComponent<PlayerClasses>();
     }
 
     public void AddExperience(int amount)
     {
         experience += amount;
-        if (experience >= experienceToNextLevel)
+
+        while (experience >= experienceToNextLevel)
         {
             level++;
             experience -= experienceToNextLevel;
+            
         }
     }
 

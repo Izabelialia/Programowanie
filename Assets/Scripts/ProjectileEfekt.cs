@@ -27,11 +27,9 @@ public class ProjectileEfekt : MonoBehaviour
     private void CreateAOE(Vector3 position)
     {
         GameObject aoe = Instantiate(aoePrefab, position, Quaternion.identity);
-
-        // Zmieniamy tylko skalę wizualną (opcjonalnie)
+        
         aoe.transform.localScale = Vector3.one * aoeRadius * 2f;
-
-        // Tutaj faktycznie wykrywamy wrogów w zasięgu
+        
         Collider[] hitColliders = Physics.OverlapSphere(position, aoeRadius);
         foreach (var hitCollider in hitColliders)
         {
