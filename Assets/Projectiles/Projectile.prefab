@@ -152,5 +152,5 @@ MonoBehaviour:
   damage: 25
   selfDestructTime: 5
   aoePrefab: {fileID: 5843030354841972655, guid: 63999f5ae6ce9ca4b9051ea25b11348f, type: 3}
-  aoeRadius: 3
-  aoeDuration: 1
+  aoeRadius: 10
+  aoeDuration: 0.5
