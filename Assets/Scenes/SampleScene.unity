@@ -56909,8 +56909,8 @@ MonoBehaviour:
   totalThrows: 100
   throwCooldown: 0.1
   throwKey: 102
-  throwForce: 30
-  throwUpwardForce: 0
+  throwForce: 10
+  throwUpwardForce: 5
   inventory: {fileID: 1968669505}
 --- !u!114 &1968669502
 MonoBehaviour:
