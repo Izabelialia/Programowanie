@@ -10682,7 +10682,7 @@ GameObject:
   - component: {fileID: 397608224}
   m_Layer: 0
   m_Name: TestEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56459,6 +56459,7 @@ GameObject:
   - component: {fileID: 1968669503}
   - component: {fileID: 1968669504}
   - component: {fileID: 1968669505}
+  - component: {fileID: 1968669506}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -56660,7 +56661,6 @@ MonoBehaviour:
   currentHp: 0
   armour: 0
   damage: 25
-  atackSpeed: 1
   healAmount: 25
   inventory: {fileID: 1968669505}
 --- !u!114 &1968669504
@@ -56692,6 +56692,22 @@ MonoBehaviour:
   mushrooms: 10
   coins: 100
   keys: 1
+--- !u!114 &1968669506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968669494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c5360d93663fc409a7e93359ceff15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDelay: 0.5
+  attackRange: 5
+  chargeTime: 1
+  playerStats: {fileID: 1968669503}
 --- !u!1001 &1969560766
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,7 +9,6 @@ public class PlayerStats : MonoBehaviour
 
     public int armour = 10;
     public int damage = 25;
-    public float atackSpeed = 1;
     
     [Header("Leczenie")]
     public int healAmount = 25;
